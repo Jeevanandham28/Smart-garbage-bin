@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Scrap Collection</title>
+</head>
+<body>
+    <header>
+        <h1>Scrap Collection Service</h1>
+    </header>
+    <main >
+        <div style="justify-items: center; margin:10%;margin-left:30%;margin-right: 30%;background-color: white;border-radius: 10
+        px;">
+            <h2 style="color: black;text-align: center;">Admin Login</h2>
+        <form method="POST" action="{{ url_for('login') }}">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required><br><br>
+        <button type="submit" style="width: 100%;border-radius:3px;">Login</button>
+    </div>
+    </form>
+    </main>
+</body>
+</html>
+

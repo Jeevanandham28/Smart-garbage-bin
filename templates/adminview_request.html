@@ -1,0 +1,40 @@
+{% extends "adminbase.html" %}
+
+{% block content %}
+<h2>Pickup Requests</h2>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Contact</th>
+            <th>Scrap Type</th>
+            <th>Pickup Date</th>
+            <th>Pickup Time</th>
+            <th>action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for request in requests %}
+        <tr>
+            <td>{{ request[0] }}</td>
+            <td>{{ request[1] }}</td>
+            <td>{{ request[2] }}</td>
+            <td>{{ request[3] }}</td>
+            <td>{{ request[4] }}</td>
+            <td>{{ request[5] }}</td>
+            <td>{{ request[6] }}</td>
+            <td>
+                <form action="{{ url_for('adminview_request') }}" method="post">
+                    <input type="hidden" name="request_id" value="{{ request[0] }}">
+                    <button type="submit" onclick="return confirm('Are you sure you want to clear this request?');">
+                        Clear
+                    </button>
+                </form>
+        </tr>
+        {% endfor %}       
+    </tbody>
+</table>
+<button style="width:70px;margin-top:10px;color: black;background-color: orange;"><a href="{{url_for('adminhome')}}">back</a></button>
+{% endblock %}

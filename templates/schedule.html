@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="border-radius:5px;justify-items: center; margin-top:20px;margin-left:30%;margin-right: 30%;background-color: white;">
+<h2 style="text-align: center;margin-bottom: 1opx;">Schedule a Scrap Pickup</h2>
+<form method="POST" style="text-align: center;">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br><br>
+    <label for="address">Address:</label>
+    <textarea id="address" name="address" required></textarea>
+    <br><br>
+    <label for="contact">Contact:</label>
+    <input type="tel" id="contact" name="contact" required>
+    <br><br>
+    <label for="scrap_type">Type of Scrap:</label>
+    <input type="text" id="scrap_type" name="scrap_type" required>
+    <br><br>
+    <label for="pickup_date">Pickup Date:</label>
+    <input type="date" id="pickup_date" name="pickup_date" min="{{ today }}" required>
+    <br><br>
+    <label for="pickup_time">Pickup Date:</label>
+    <input type="time" id="pickup_time" name="pickup_time" min="09:00" max="18:00" required>
+    <br><br>
+    <button type="submit" onclick="alert('confirm to schedule')">Schedule Pickup</button>
+    <br>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <ul class="flash-messages">
+      {% for category, message in messages %}
+        <li class="{{ category }}">{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+</form>
+</div>
+{% endblock %}

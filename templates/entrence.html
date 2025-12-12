@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Scrap Collection</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+    border-radius: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 3rem;
+    color: orange;
+}
+
+.main-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.button {
+    text-align: center;
+    width: 400px;
+    height: 100px;
+    background-color: chocolate;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #d2691e;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Scrap Collection Service</h1>
+    </header>
+    <main class="main-buttons">
+        <a href="/adminlog" class="button">ADMIN</a>
+        <a href="/user" class="button">USER</a>
+    </main>
+</body>
+</html>

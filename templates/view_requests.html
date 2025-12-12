@@ -1,0 +1,27 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Pickup Requests</h2>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Pickup Date</th>
+            <th>pickup Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for request in requests %}
+        <tr>
+            <td>{{ request[0] }}</td>
+            <td>{{ request[1] }}</td>
+            <td>{{ request[2] }}</td>
+            <td>{{ request[3] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<button style="width:70px;margin-top:10px;color: black;background-color: orange;"><a href="{{url_for('user')}}">back</a></button>
+{% endblock %}
